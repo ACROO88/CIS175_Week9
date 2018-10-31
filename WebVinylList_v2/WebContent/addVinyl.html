@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script>
+function checkFormInput(){
+	var artist = document.forms["inputForm"]["artist"].value;
+	var album = document.forms["inputForm"]["album"].value;
+	var genre = document.forms["inputForm"]["genre"].value;
+	if (artist =="" || album =="" || genre ==""){
+		alert("Artist, album, or genre must have a value");
+		return false;
+	}
+}
+</script>
+
+</head>
+<body>
+
+<form name="inputForm" action = "addVinylServlet" onsubmit="return checkFormInput()" method="post">
+Artist: <input type="text" name="artist">
+Album: <input type="text" name="album">
+Genre: <input type="text" name="genre">
+Rating: <input type="text" name="rating">
+<input type="submit" value="Add Vinyl">
+</form>
+
+<a href = "index.html">Back to List</a><br/>
+<a href = "viewAllVinylServlet">View complete list</a>
+</body>
+</html>
